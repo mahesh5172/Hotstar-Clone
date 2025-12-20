@@ -21,7 +21,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t dockerhubusername/nodejs-app:latest .
+        docker build -t mahesh919/nodejs-app:latest .
 
     - name: Push Docker Image to Docker Hub
       run: |
