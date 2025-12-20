@@ -25,6 +25,6 @@ jobs:
 
     - name: Push Docker Image to Docker Hub
       run: |
-        docker push dockerhubusername/nodejs-app:latest
+        docker push mahesh919/nodejs-app:latest
 
         
