@@ -40,7 +40,8 @@ jobs:
             -Dsonar.projectName=Hotstar-Clone
             -Dsonar.sources=src
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.sourceEncoding=UTF-8 # 7️⃣ Build React App
+            -Dsonar.sourceEncoding=UTF-8
+      # 7️⃣ Build React App
       - name: Build React app
         run: npm run build
 
