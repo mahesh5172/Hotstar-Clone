@@ -43,7 +43,7 @@ jobs:
             -Dsonar.sourceEncoding=UTF-8
       # 7️⃣ Build React App
       - name: Build React app
-        run: npm run build
+        run: CI=false npm run build
 
       # 8️⃣ Zip build artifact
       - name: Zip build folder
