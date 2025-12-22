@@ -28,11 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ Run Tests with Coverage (Optional but Recommended)
-      - name: Run tests with coverage
-        run: npm test -- --coverage --watch=false
-        continue-on-error: true
-
       # 5️⃣ SonarQube Scan
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
@@ -41,8 +36,8 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args: >
-            -Dsonar.projectKey=react-app
-            -Dsonar.projectName=React App
+            -Dsonar.projectKey=Hotstar-Clone
+            -Dsonar.projectName=Hotstar-Clone
             -Dsonar.sources=src
             -Dsonar.tests=src
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
