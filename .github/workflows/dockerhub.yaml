@@ -39,7 +39,6 @@ jobs:
             -Dsonar.projectKey=Hotstar-Clone
             -Dsonar.projectName=Hotstar-Clone
             -Dsonar.sources=src
-            -Dsonar.tests=src
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.sourceEncoding=UTF-8
 
