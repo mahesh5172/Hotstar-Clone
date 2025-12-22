@@ -40,6 +40,24 @@ jobs:
             -Dsonar.projectName=Hotstar-Clone
             -Dsonar.sources=src
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.sourceEncoding=UTF-8
+            -Dsonar.sourceEncoding=UTF-8 # 7️⃣ Build React App
+      - name: Build React app
+        run: npm run build
+
+      # 8️⃣ Zip build artifact
+      - name: Zip build folder
+        run: |
+          zip -r react-build-${{ github.run_number }}.zip build
+
+      # 9️⃣ Upload artifact to Nexus
+      - name: Upload to Nexus
+        run: |
+          curl -u ${{ secrets.NEXUS_USERNAME }}:${{ secrets.NEXUS_PASSWORD }} \
+          --upload-file react-build-${{ github.run_number }}.zip \
+          ${{ secrets.NEXUS_URL }}/repository/${{ secrets.NEXUS_REPOSITORY }}/react/react-build-${{ github.run_number }}.zip
+
+            
+
+            
 
      
